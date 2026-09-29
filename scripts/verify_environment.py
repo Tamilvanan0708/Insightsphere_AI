@@ -5,6 +5,13 @@ Tests Python version, core dependencies, Playwright browser, and code quality to
 """
 
 import sys
+from pathlib import Path
+
+# Ensure project root is in sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 
 
 def verify():
@@ -43,9 +50,25 @@ def verify():
     print(f"[x] Pytest Version: {pytest.__version__}")
     print("[x] Ruff & Mypy tooling: AVAILABLE")
 
+    # 5. Gemini & LLM dependencies
+    import google.genai
+    import google.generativeai
+
+    from app.config import get_settings
+
+    settings = get_settings()
+    print("[x] google.genai: AVAILABLE")
+    print(f"[x] google.generativeai Version: {google.generativeai.__version__}")
+    print(f"[x] Gemini Model Config: {settings.gemini_model}")
+    print(
+        f"[x] Gemini Embedding Config: {settings.gemini_embedding_model} "
+        f"(dim={settings.embedding_dimension})"
+    )
+
     print("=" * 60)
-    print("ALL ENVIRONMENT & EXTRACTION DEPENDENCY CHECKS PASSED!")
+    print("ALL ENVIRONMENT, EXTRACTION & GEMINI CHECKS PASSED!")
     print("=" * 60)
+
 
 
 if __name__ == "__main__":

@@ -26,3 +26,10 @@ python-dotenv>=1.0.0
 pydantic-settings>=2.0.0
 pydantic>=2.7.0
 
+# ----------------------------------------------------
+# 4. Gemini & LLM / Embeddings
+# ----------------------------------------------------
+google-genai>=0.1.1
+google-generativeai>=0.8.0
+
+
