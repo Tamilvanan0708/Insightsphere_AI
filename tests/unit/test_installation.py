@@ -39,3 +39,13 @@ def test_configuration_imports():
     assert dotenv.__name__ == "dotenv"
     assert pydantic.__version__
     assert pydantic_settings.__name__ == "pydantic_settings"
+
+
+def test_gemini_imports():
+    """Verify Google Gemini libraries import successfully."""
+    import google.genai
+    import google.generativeai
+
+    assert google.genai is not None
+    assert google.generativeai.__version__
+
