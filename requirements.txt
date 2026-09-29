@@ -1,0 +1,47 @@
+# InsightSphere AI — Central Dependency Specification
+# Python Version: 3.11+
+
+# ----------------------------------------------------
+# 1. Core Extraction & Ingestion (Task 2.7 — Tamilvanan)
+# ----------------------------------------------------
+httpx>=0.27.0
+beautifulsoup4>=4.12.0
+playwright>=1.40.0
+pymupdf>=1.23.0
+pandas>=2.1.0
+lxml>=5.0.0
+
+# ----------------------------------------------------
+# 2. Testing, Code Quality & Linting (Task 2.9 — Tamilvanan)
+# ----------------------------------------------------
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+ruff>=0.4.0
+mypy>=1.10.0
+
+# ----------------------------------------------------
+# 3. Environment & Configuration (Task 2.11 — Sivaprakash)
+# ----------------------------------------------------
+python-dotenv>=1.0.0
+pydantic-settings>=2.0.0
+pydantic>=2.7.0
+
+# ----------------------------------------------------
+# 4. Backend API & Web Framework (Task 2.4 — Sivaprakash)
+# (To be added by Sivaprakash: fastapi, uvicorn)
+# ----------------------------------------------------
+
+# ----------------------------------------------------
+# 5. Agent Orchestration (Task 2.5 — Sivaprakash)
+# (To be added by Sivaprakash: google-adk)
+# ----------------------------------------------------
+
+# ----------------------------------------------------
+# 6. Gemini AI & Embeddings (Task 2.6 — Shahidha)
+# (To be added by Shahidha: google-genai, google-generativeai)
+# ----------------------------------------------------
+
+# ----------------------------------------------------
+# 7. Vector Database & RAG Stack (Task 2.8 — James)
+# (To be added by James: qdrant-client, rank-bm25, sentence-transformers)
+# ----------------------------------------------------
