@@ -39,3 +39,29 @@ def test_configuration_imports():
     assert dotenv.__name__ == "dotenv"
     assert pydantic.__version__
     assert pydantic_settings.__name__ == "pydantic_settings"
+
+
+def test_rag_imports():
+    """Verify RAG & retrieval pipeline dependencies import successfully."""
+    import importlib.metadata as md
+
+    from qdrant_client import QdrantClient
+    from rank_bm25 import BM25Okapi, BM25L, BM25Plus
+    from rerankers import Reranker
+    from sentence_transformers import SentenceTransformer
+
+    # Qdrant client
+    assert md.version("qdrant-client")
+    assert QdrantClient is not None
+
+    # BM25 keyword retrieval
+    assert BM25Okapi is not None
+    assert BM25L is not None
+    assert BM25Plus is not None
+
+    # Reranking interface
+    assert Reranker is not None
+
+    # Embeddings
+    assert SentenceTransformer is not None
+    assert md.version("sentence-transformers")

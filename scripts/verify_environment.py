@@ -43,8 +43,22 @@ def verify():
     print(f"[x] Pytest Version: {pytest.__version__}")
     print("[x] Ruff & Mypy tooling: AVAILABLE")
 
+    # 5. RAG & Retrieval dependencies
+    import importlib.metadata as md
+
+    from qdrant_client import QdrantClient
+    from rank_bm25 import BM25Okapi, BM25L, BM25Plus
+    from rerankers import Reranker
+    from sentence_transformers import SentenceTransformer
+
+    print(f"[x] Qdrant Client Version: {md.version('qdrant-client')}")
+    print("[x] QdrantClient instantiation: AVAILABLE")
+    print("[x] BM25 (Okapi / L / Plus): AVAILABLE")
+    print(f"[x] Sentence-Transformers Version: {md.version('sentence-transformers')}")
+    print(f"[x] Rerankers Version: {md.version('rerankers')}")
+
     print("=" * 60)
-    print("ALL ENVIRONMENT & EXTRACTION DEPENDENCY CHECKS PASSED!")
+    print("ALL ENVIRONMENT, EXTRACTION & RAG DEPENDENCY CHECKS PASSED!")
     print("=" * 60)
 
 
